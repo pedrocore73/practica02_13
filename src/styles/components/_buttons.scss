@@ -1,0 +1,13 @@
+button {
+    background-color: $main-color;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    border-bottom: 3px solid $main-color-darker;
+    font-size: 1.2em;
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+        background-color: $main-color-darker;
+    }
+}
