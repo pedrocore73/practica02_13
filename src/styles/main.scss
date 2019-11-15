@@ -5,6 +5,9 @@
 @import 'base/typography';
 
 @import 'components/buttons';
+@import 'components/breadcrumb';
+
+@import 'layout/layout';
 
 body {
     font-family: $main-font;

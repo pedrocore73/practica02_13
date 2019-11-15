@@ -1,0 +1,11 @@
+.fila {
+    width: 100%;
+    padding: 0.5em;
+    @include flex-row(flex-start, center);
+}
+
+.col-100 {
+    width: 100%;
+    padding: 0.5em;
+    @include flex-row(flex-start, center);
+}
