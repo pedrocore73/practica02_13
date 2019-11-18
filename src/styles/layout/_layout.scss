@@ -1,5 +1,26 @@
 .container {
-    margin-top: -53px;
+    margin-top: -120px;
+}
+
+.card {
+    width: calc(100% - 2em);
+    border-radius: 0.5em;
+    background-color: white;
+    margin: 0.5em 1em 1em;
+    padding: 1em;
+
+    &.w-60 {
+        width: 60%;
+        margin: 0.5em auto 1em;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background-color: $color-font-lighter;
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 .fila {
@@ -12,4 +33,37 @@
     width: 100%;
     padding: 0.5em;
     @include flex-row(flex-start, center);
+
+    &.titulo {
+        @include flex-row(space-between, center);
+    }
+
+    &.pila {
+        @include flex-column (flex-start, flex-start);
+    }
+
+    &.botones {
+        @include flex-row(flex-end, center);
+    }
 }
+
+.col-66 {
+    width: 66.6666666%;
+    padding: 0.5em;
+    @include flex-row(flex-start, center);
+    
+    &.pila {
+        @include flex-column (flex-start, flex-start);
+    }
+}
+
+.col-33 {
+    width: 33.3333333%;
+    padding: 0.5em;
+    @include flex-row(flex-start, center);
+    
+    &.pila {
+        @include flex-column (flex-start, flex-start);
+    }
+}
+

@@ -4,8 +4,9 @@
 @import 'base/reset';
 @import 'base/typography';
 
-@import 'components/buttons';
 @import 'components/breadcrumb';
+@import 'components/buttons';
+@import 'components/forms';
 @import 'components/nav';
 
 @import 'layout/layout';
@@ -13,6 +14,7 @@
 body {
     font-family: $main-font;
     color: $color-font;
+    background-color: rgb(236, 236, 236);
 }
 
 h1 {
