@@ -13,9 +13,9 @@ export class BreadcrumbComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.data.subscribe(data => {
-      this.rutas = data.rutas;
-    })
+      this.route.data.subscribe(data => {
+        this.rutas = data.rutas;
+      })
   }
 
 }

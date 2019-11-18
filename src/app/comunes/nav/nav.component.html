@@ -1,0 +1,25 @@
+<nav #nav>
+    <header>
+        <div class="burger" (click)="toggleMenu()">
+            <div class="bar up"></div>
+            <div class="bar middle"></div>
+            <div class="bar down"></div>
+        </div>
+    </header>
+    <div class="side-menu">
+        <div class="item" routerLink="/listado-clientes" (click)="toggleMenu()">
+            Clientes
+        </div>
+        <hr>
+        <div class="item">
+            Facturas
+        </div>
+        <div class="item">
+            &copy; 2019 ACME, S.A.
+        </div>
+    </div>
+</nav>
+
+
+            
+ 

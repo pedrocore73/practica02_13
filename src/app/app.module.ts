@@ -7,6 +7,7 @@ import { ListadoClientesComponent } from './clientes/listado-clientes/listado-cl
 import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { BreadcrumbComponent } from './comunes/breadcrumb/breadcrumb.component';
+import { NavComponent } from './comunes/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BreadcrumbComponent } from './comunes/breadcrumb/breadcrumb.component';
     ListadoClientesComponent,
     CrearClienteComponent,
     InicioComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
