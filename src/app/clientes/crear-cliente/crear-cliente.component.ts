@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Cliente } from 'src/app/models/cliente.model';
 import { ClientesService } from 'src/app/servicios/clientes.service';
 import { Router } from '@angular/router';
+import { MensajesService } from 'src/app/servicios/mensajes.service';
 
 @Component({
   selector: 'app-crear-cliente',
@@ -14,7 +15,8 @@ export class CrearClienteComponent implements OnInit {
   formCliente: FormGroup;
 
   constructor(private clientesService: ClientesService,
-              private router: Router) { }
+              private router: Router,
+              private mensajesService: MensajesService) { }
 
   ngOnInit() {
     this.formCliente = new FormGroup({
@@ -40,6 +42,7 @@ export class CrearClienteComponent implements OnInit {
       )
     this.clientesService.postCliente(cliente)
                   .subscribe((res:any)=>{
+                      this.mensajesService.setMensaje(res.mensaje, 'exitoTotal');
                       this.router.navigate(['/listado-clientes']);
                     },(err:any)=>{
                       console.log(err);

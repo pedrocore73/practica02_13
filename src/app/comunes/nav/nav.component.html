@@ -5,6 +5,11 @@
             <div class="bar middle"></div>
             <div class="bar down"></div>
         </div>
+        <div class="mensaje" 
+             *ngIf="texto.length > 0"
+             [ngClass]="{'success': tipoMensaje === 'exitoTotal'}">
+            {{texto}}
+        </div>
     </header>
     <div class="side-menu">
         <div class="item" routerLink="/listado-clientes" (click)="toggleMenu()">
