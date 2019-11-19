@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    &.clientes {
+        th {
+            text-align: left;
+        }
+    }
+
+    th,
+    td {
+        padding: 1em;
+    }
+
+    tr:nth-child(odd) td {
+        background-color: $color-font-ultra-light;
+    }
+
+    tr:hover td {
+        background-color: $main-color-lighter;
+    }
+
+}

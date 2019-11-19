@@ -8,6 +8,7 @@
 @import 'components/buttons';
 @import 'components/forms';
 @import 'components/nav';
+@import 'components/tables';
 
 @import 'layout/layout';
 
@@ -27,4 +28,12 @@ a {
     &:hover {
         color: $main-color-darker;
     }
+}
+
+.m-l-small {
+    margin-left: 0.5em;
+}
+
+.m-r-small {
+    margin-right: 0.5em;
 }

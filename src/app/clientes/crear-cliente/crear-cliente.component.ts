@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Cliente } from 'src/app/models/cliente.model';
 import { ClientesService } from 'src/app/servicios/clientes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-cliente',
@@ -12,7 +13,8 @@ export class CrearClienteComponent implements OnInit {
 
   formCliente: FormGroup;
 
-  constructor(private clientesService: ClientesService) { }
+  constructor(private clientesService: ClientesService,
+              private router: Router) { }
 
   ngOnInit() {
     this.formCliente = new FormGroup({
@@ -38,7 +40,7 @@ export class CrearClienteComponent implements OnInit {
       )
     this.clientesService.postCliente(cliente)
                   .subscribe((res:any)=>{
-                      console.log(res);
+                      this.router.navigate(['/listado-clientes']);
                     },(err:any)=>{
                       console.log(err);
                     })

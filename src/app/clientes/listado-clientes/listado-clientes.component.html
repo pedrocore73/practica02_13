@@ -6,6 +6,23 @@
                <h1></h1>
                <button routerLink="/crear-cliente">Añadir cliente</button>
            </div>
-       </div> 
+       </div>
+       <hr>
+       <table class="clientes">
+           <tr>
+               <th>NOMBRE</th>
+               <th>CIF</th>
+               <th>LOCALIDAD</th>
+               <th>CORREO ELECTRÓNICO</th>
+               <th></th>
+           </tr>
+           <tr *ngFor="let cliente of clientes">
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.cif}}</td>
+                <td>{{cliente.direccion.localidad}}</td>
+                <td>{{cliente.email}}</td>
+                <td></td>
+           </tr>
+       </table>
     </div>
 </div>
