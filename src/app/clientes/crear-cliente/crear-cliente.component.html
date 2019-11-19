@@ -1,13 +1,13 @@
 <div class="container">
     <app-breadcrumb></app-breadcrumb>
     <div class="card w-60">
-        <!-- prov se acabó la clase, mañana mas-->
         <div class="fila">
-            <h1>Nuevo Cliente</h1>
-            <hr>
+            <div class="col-100 titulo">
+                <h1>Nuevo cliente</h1>
+            </div>
         </div>
-        <!-- -->
-        <form>
+        <hr>
+        <form [formGroup]="formCliente" (ngSubmit)="sendCliente()">
             <div class="fila">
                 <div class="col-100 pila">
                     <label for="nombre">NOMBRE</label>
