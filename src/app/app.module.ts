@@ -10,6 +10,7 @@ import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.co
 import { InicioComponent } from './inicio/inicio.component';
 import { BreadcrumbComponent } from './comunes/breadcrumb/breadcrumb.component';
 import { NavComponent } from './comunes/nav/nav.component';
+import { ModalComponent } from './comunes/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavComponent } from './comunes/nav/nav.component';
     CrearClienteComponent,
     InicioComponent,
     BreadcrumbComponent,
-    NavComponent
+    NavComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
