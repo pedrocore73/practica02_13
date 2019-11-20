@@ -1,1 +1,39 @@
-<p>listado-facturas works!</p>
+<div class="container">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="card">
+       <div class="fila">
+           <div class="col-100 titulo">
+               <h1></h1>
+               <button routerLink="/crear-factura">Añadir factura</button>
+           </div>
+       </div>
+       <hr>
+       <!-- <table class="clientes">
+           <tr>
+               <th>NOMBRE</th>
+               <th>CIF</th>
+               <th>LOCALIDAD</th>
+               <th>CORREO ELECTRÓNICO</th>
+               <th></th>
+           </tr>
+           <tr *ngFor="let cliente of clientes">
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.cif}}</td>
+                <td>{{cliente.direccion.localidad}}</td>
+                <td>{{cliente.email}}</td>
+                <td>
+                    <button class="warning">
+                        <img src="assets/edit.svg">
+                    </button>
+                    <button class="danger m-l-small" (click)="showModal(cliente._id)">
+                        <img src="assets/trash.svg">
+                    </button>
+                </td>
+           </tr>
+       </table> -->
+    </div>
+</div>
+<!-- <app-modal *ngIf="modal" 
+           [texto]="'¿Está seguro de eliminar el cliente?'"
+           [parametro]="id"
+           (action)="getAction($event)"></app-modal> -->

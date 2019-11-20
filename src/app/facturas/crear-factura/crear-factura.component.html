@@ -1,1 +1,19 @@
-<p>crear-factura works!</p>
+<div class="container">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="card w-60">
+        <div class="fila">
+            <div class="col-100 titulo">
+                <h1>Nuevo factura</h1>
+            </div>
+        </div>
+        <hr>
+        <form [formGroup]="formFra"> 
+            <div class="fila">
+                <div class="col-100 pila">
+                    <label for="cliente">Cliente</label>
+                    <input type="text" id="cliente" formControlName="cliente">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
