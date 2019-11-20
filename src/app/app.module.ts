@@ -11,6 +11,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { BreadcrumbComponent } from './comunes/breadcrumb/breadcrumb.component';
 import { NavComponent } from './comunes/nav/nav.component';
 import { ModalComponent } from './comunes/modal/modal.component';
+import { ListadoFacturasComponent } from './facturas/listado-facturas/listado-facturas.component';
+import { CrearFacturaComponent } from './facturas/crear-factura/crear-factura.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ModalComponent } from './comunes/modal/modal.component';
     InicioComponent,
     BreadcrumbComponent,
     NavComponent,
-    ModalComponent
+    ModalComponent,
+    ListadoFacturasComponent,
+    CrearFacturaComponent
   ],
   imports: [
     BrowserModule,

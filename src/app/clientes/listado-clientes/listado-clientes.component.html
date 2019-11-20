@@ -25,7 +25,7 @@
                     <button class="warning">
                         <img src="assets/edit.svg">
                     </button>
-                    <button class="danger m-l-small" (click)="removeCliente(cliente._id)">
+                    <button class="danger m-l-small" (click)="showModal(cliente._id)">
                         <img src="assets/trash.svg">
                     </button>
                 </td>
@@ -33,4 +33,7 @@
        </table>
     </div>
 </div>
-<app-modal></app-modal>
+<app-modal *ngIf="modal" 
+           [texto]="'¿Está seguro de eliminar el cliente?'"
+           [parametro]="id"
+           (action)="getAction($event)"></app-modal>

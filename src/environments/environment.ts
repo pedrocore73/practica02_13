@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlCliente: 'http://localhost:3000/cliente'
+  urlCliente: 'http://localhost:3000/cliente',
+  urlFactura: 'http://localhost:3000/factura'
 };
 
 /*

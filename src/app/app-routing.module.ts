@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { ListadoClientesComponent } from './clientes/listado-clientes/listado-clientes.component';
 import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
+import { ListadoFacturasComponent } from './facturas/listado-facturas/listado-facturas.component';
+import { CrearFacturaComponent } from './facturas/crear-factura/crear-factura.component';
 
 
 const routes: Routes = [
@@ -25,6 +27,21 @@ const routes: Routes = [
                   {ruta:'/crear-cliente',texto:'Crear Cliente'}
                 ]
           }
+  },
+  {
+    path:'listado-facturas', 
+    component: ListadoFacturasComponent,
+    data: {rutas: [{ruta:'/',texto:'Inicio'},{ruta:'/listado-facturas',texto:'Listado de Facturas'}]}
+  },
+  {
+    path:'crear-factura', 
+    component: CrearFacturaComponent,
+    data: {rutas: [
+                   {ruta:'/',texto:'Inicio'},
+                   {ruta:'/listado-facturas',texto:'Listado de Facturas'},
+                   {ruta:'/crear-factura',texto:'Crear Factura'}
+                 ]
+           }
   },
 ];
 

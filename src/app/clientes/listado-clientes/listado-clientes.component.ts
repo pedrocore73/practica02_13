@@ -11,6 +11,8 @@ import { MensajesService } from 'src/app/servicios/mensajes.service';
 export class ListadoClientesComponent implements OnInit {
 
   clientes: Array<Cliente>;
+  modal = false;
+  id: string;
 
   constructor(private clientesService: ClientesService,
               private mensajesService: MensajesService) { }
@@ -36,6 +38,24 @@ export class ListadoClientesComponent implements OnInit {
                   },(err:any)=>{
                     this.mensajesService.setMensaje('Error de conexión con los servidores, inténtelo más tarde', 'warning');
                   })
+  }
+
+  showModal(id) {
+    this.id = id;
+    this.modal = true;
+  }
+
+  hideModal() {
+    this.modal = false;
+  }
+
+  getAction(event) {
+    if(event.action) {
+      this.removeCliente(event.parametro);
+      this.hideModal();
+    } else {
+      this.hideModal();
+    }
   }
 
 }
