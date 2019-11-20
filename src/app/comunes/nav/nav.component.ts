@@ -13,12 +13,19 @@ export class NavComponent implements OnInit {
   texto: string;
   tipoMensaje: string;
   subscripMensaje: Subscription;
+  showMensaje = false;
+  timer: any;
 
   constructor(private mensajesService: MensajesService) { }
 
   ngOnInit() {
     this.subscripMensaje = this.mensajesService.isMensajeIn
                                     .subscribe((data:any)=>{
+                                        window.clearTimeout(this.timer);
+                                        this.showMensaje = true;
+                                        this.timer = setTimeout(()=>{
+                                          this.showMensaje = false;
+                                        }, 5000);
                                         this.texto = data.texto;
                                         this.tipoMensaje = data.tipoMensaje;
                                       },(err:any)=>{

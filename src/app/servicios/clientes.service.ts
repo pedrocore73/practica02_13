@@ -31,4 +31,13 @@ export class ClientesService {
                   )
   }
 
+  deleteCliente(id) {
+    return this.http.delete(this.urlCliente + '/' + id)
+                  .pipe(
+                    map((res:any)=>{
+                      return res;
+                    })
+                  )
+  }
+
 }

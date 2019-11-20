@@ -22,4 +22,22 @@ button {
         background-color: $main-color-darker;
         color: white;
     }
+
+    &.warning {
+        background-color: $warning;
+        border-bottom: 3px solid $warning-darker;
+    }
+
+    &.warning:hover {
+        background-color: $warning-darker;
+    }
+
+    &.danger {
+        background-color: $danger;
+        border-bottom: 3px solid $danger-darker;
+    }
+
+    &.danger:hover {
+        background-color: $danger-darker;
+    }
 }

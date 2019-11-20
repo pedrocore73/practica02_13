@@ -21,7 +21,14 @@
                 <td>{{cliente.cif}}</td>
                 <td>{{cliente.direccion.localidad}}</td>
                 <td>{{cliente.email}}</td>
-                <td></td>
+                <td>
+                    <button class="warning">
+                        <img src="assets/edit.svg">
+                    </button>
+                    <button class="danger m-l-small" (click)="removeCliente(cliente._id)">
+                        <img src="assets/trash.svg">
+                    </button>
+                </td>
            </tr>
        </table>
     </div>

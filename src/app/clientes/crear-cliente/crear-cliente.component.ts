@@ -45,7 +45,11 @@ export class CrearClienteComponent implements OnInit {
                       this.mensajesService.setMensaje(res.mensaje, 'exitoTotal');
                       this.router.navigate(['/listado-clientes']);
                     },(err:any)=>{
-                      console.log(err);
+                      if(err.error.error !== undefined) {
+                        this.mensajesService.setMensaje('Ya existe un cliente con ese cif', 'error');
+                      } else {
+                        this.mensajesService.setMensaje('Error de conexión con los servidores, inténtelo más tarde', 'warning');
+                      }
                     })
   }
 
