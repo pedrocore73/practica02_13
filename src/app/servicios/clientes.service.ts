@@ -22,6 +22,15 @@ export class ClientesService {
                   )
   }
 
+  getCliente(nombre) {
+    return this.http.get(this.urlCliente + '/search/' + nombre)
+                  .pipe(
+                    map((res:any)=>{
+                      return res;
+                    })
+                  )
+  }
+
   postCliente(cliente: Cliente) {
     return this.http.post(this.urlCliente, cliente)
                   .pipe(

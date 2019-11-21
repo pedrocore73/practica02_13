@@ -25,12 +25,17 @@
     width: 100%;
     padding: 0.5em;
     @include flex-row(flex-start, center);
+
+    &.end {
+        @include flex-row(flex-end, center);
+    }
 }
 
 .col-100 {
     width: 100%;
     padding: 0.5em;
     @include flex-row(flex-start, center);
+    position: relative;
 
     &.titulo {
         @include flex-row(space-between, center);
