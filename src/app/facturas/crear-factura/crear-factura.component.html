@@ -7,7 +7,7 @@
             </div>
         </div>
         <hr>
-        <form [formGroup]="formFra"> 
+        <form [formGroup]="formFra" (ngSubmit)="sendFactura()"> 
             <div class="fila">
                 <div class="col-100 pila">
                     <label for="cliente">Nombre cliente</label>
@@ -22,13 +22,11 @@
                 </div>
             </div>
             <div class="fila">
-                <div class="col-100 pila">
+                <div class="col-50 pila">
                     <label for="cif">CIF</label>
                     <input type="text" id="cif" formControlName="cif" readonly>
                 </div>
-            </div>
-            <div class="fila">
-                <div class="col-100 pila">
+                <div class="col-50 pila">
                     <label for="fecha">Fecha</label>
                     <input type="date" id="fecha" formControlName="fecha" value="{{fechaActual | date:'yyyy-MM-dd'}}">
                 </div>
@@ -59,13 +57,25 @@
             <div class="fila end">
                 <div class="col-33 pila">
                     <label for="importeIVA">Importe IVA</label>
-                    <input type="number" id="importeIVA" formControlName="importeIVA">
+                    <input type="text" id="importeIVA" formControlName="importeIVA" readonly>
                 </div>
             </div>
             <div class="fila end">
                 <div class="col-33 pila">
                     <label for="total">Total factura IVA incluido</label>
-                    <input type="number" id="total" formControlName="total">
+                    <input type="text" id="total" formControlName="total" readonly>
+                </div>
+            </div>
+            <div class="fila end">
+                <div class="col-33 pila">
+                    <label for="formaPago">Forma de Pago</label>
+                    <input type="text" id="formaPago" formControlName="formaPago">
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-100 botones">
+                    <button class="outline" routerLink="/listado-facturas">Cancelar</button>
+                    <button type="submmit" class="m-l-small">Añadir</button>
                 </div>
             </div>
         </form>

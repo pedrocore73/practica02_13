@@ -60,6 +60,16 @@
     }
 }
 
+.col-50 {
+    width: 50%;
+    padding: 0.5em;
+    @include flex-row(flex-start, center);
+    
+    &.pila {
+        @include flex-column (flex-start, flex-start);
+    }
+}
+
 .col-33 {
     width: 33.3333333%;
     padding: 0.5em;
