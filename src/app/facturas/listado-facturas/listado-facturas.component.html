@@ -8,29 +8,24 @@
            </div>
        </div>
        <hr>
-       <!-- <table class="clientes">
+       <table class="facturas">
            <tr>
-               <th>NOMBRE</th>
-               <th>CIF</th>
-               <th>LOCALIDAD</th>
-               <th>CORREO ELECTRÓNICO</th>
+               <th>CLIENTE</th>
+               <th>FECHA FACTURA</th>
+               <th>BASE IMPONIBLE</th>
                <th></th>
            </tr>
-           <tr *ngFor="let cliente of clientes">
-                <td>{{cliente.nombre}}</td>
-                <td>{{cliente.cif}}</td>
-                <td>{{cliente.direccion.localidad}}</td>
-                <td>{{cliente.email}}</td>
+           <tr *ngFor="let factura of facturas">
+                <td>{{factura.cliente.nombre}}</td>
+                <td>{{factura.fecha | date:'dd/MM/yyyy'}}</td>
+                <td>{{factura.base}}</td>
                 <td>
-                    <button class="warning">
-                        <img src="assets/edit.svg">
-                    </button>
-                    <button class="danger m-l-small" (click)="showModal(cliente._id)">
-                        <img src="assets/trash.svg">
+                    <button class="success" routerLink="/visualizar-factura/{{factura._id}}">
+                        <img src="assets/printer.svg">
                     </button>
                 </td>
            </tr>
-       </table> -->
+       </table>
     </div>
 </div>
 <!-- <app-modal *ngIf="modal" 

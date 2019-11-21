@@ -89,6 +89,7 @@ export class CrearFacturaComponent implements OnInit {
     this.facturasService.postFactura(factura)
                   .subscribe((res:any)=>{
                       this.mensajesService.setMensaje(res.mensaje, 'exitoTotal');
+                      this.router.navigate(['/listado-facturas']);
                     },(err:any)=>{
                       this.mensajesService.setMensaje('Error de conexión con los servidores, inténtelo más tarde', 'warning');
                     })

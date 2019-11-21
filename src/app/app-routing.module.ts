@@ -5,6 +5,7 @@ import { ListadoClientesComponent } from './clientes/listado-clientes/listado-cl
 import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
 import { ListadoFacturasComponent } from './facturas/listado-facturas/listado-facturas.component';
 import { CrearFacturaComponent } from './facturas/crear-factura/crear-factura.component';
+import { VisualizarFacturaComponent } from './facturas/visualizar-factura/visualizar-factura.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,16 @@ const routes: Routes = [
                    {ruta:'/',texto:'Inicio'},
                    {ruta:'/listado-facturas',texto:'Listado de Facturas'},
                    {ruta:'/crear-factura',texto:'Crear Factura'}
+                 ]
+           }
+  },
+  {
+    path:'visualizar-factura/:id', 
+    component: VisualizarFacturaComponent,
+    data: {rutas: [
+                   {ruta:'/',texto:'Inicio'},
+                   {ruta:'/listado-facturas',texto:'Listado de Facturas'},
+                   {ruta:'/visualizar-factura/:id',texto:'Vista previa'}
                  ]
            }
   },
