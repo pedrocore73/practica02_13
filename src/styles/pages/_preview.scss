@@ -81,6 +81,59 @@
             line-height: 20pt;
             text-align: left;
         }
-        
+
     }
+
+    .pie {
+        border: 1pt solid $color-font;
+        @include flex-row(flex-start, stretch);
+
+        .observaciones {
+            width: 50%;
+            border-right: 1pt solid $color-font;
+            padding: 8pt;
+        }
+
+        .calculo {
+            width: 50%;
+
+            p {
+                @include flex-row(space-between, flex-end);
+                padding: 8pt;
+                border-bottom: 1pt solid $color-font;
+            }
+
+            p:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+
+    html,
+    body {
+        overflow: hidden;
+    }
+
+    .pagina {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: auto;
+        height: 100%;
+        box-shadow: initial;
+    }
+
+    .container {
+        display: none;
+    }
+
 }
