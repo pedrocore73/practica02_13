@@ -41,6 +41,10 @@
         @include flex-row(space-between, center);
     }
 
+    &.centrado {
+        @include flex-row(center, center);
+    }
+
     &.pila {
         @include flex-column (flex-start, flex-start);
     }

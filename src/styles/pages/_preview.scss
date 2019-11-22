@@ -1,0 +1,51 @@
+.pagina {
+    width: 210mm;
+    min-width: 210mm;
+    height: 297mm;
+    background-color: white;
+    box-shadow: 4px 4px 8px $color-font-lighter, 
+               -4px -4px 8px $color-font-lighter,
+               4px -4px 8px $color-font-lighter,
+               -4px 4px 8px $color-font-lighter;
+    margin: 2em auto 2em;
+    padding: 1.5cm;
+    font-size: 12pt;
+
+    .cabecera {
+        @include flex-row(space-between, center);
+        font-size: 14pt;
+
+        img {
+            height: 2cm;
+        }
+
+        h3 {
+            font-size: 18pt;
+            margin-bottom: 4pt;
+        }
+
+        p {
+            margin-bottom: 4pt;
+        }
+    }
+
+    .tipo-documento {
+        font-size: 20pt;
+        text-align: center;
+        margin-bottom: 8pt;
+        color: #eb642a;
+    }
+
+    .cliente {
+        width: 100%;
+        border-top: 1pt solid $color-font;
+        border-right: 1pt solid $color-font;
+        border-left: 1pt solid $color-font;
+        @include flex-column(flex-start,flex-start);
+        padding: 8pt;
+
+        p {
+            margin-bottom: 4pt;
+        }
+    }
+}

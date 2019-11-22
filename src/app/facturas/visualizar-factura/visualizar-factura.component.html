@@ -1,1 +1,35 @@
-<p>visualizar-factura works!</p>
+<div class="container">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="card">
+        <div class="fila">
+            <div class="col-100 centrado">
+                <button class="outline" routerLink="/listado-facturas">Cancelar</button>
+                <button class="m-l-small">Imprimir</button>
+            </div>
+        </div>
+        <hr>
+        <div class="fila">
+            <div class="pagina">
+                <div class="cabecera">
+                    <img src="assets/logo.svg">
+                    <div>
+                        <h3>ACME, S.A.</h3>
+                        <p>Serrano Galvache, 56</p>
+                        <p>28033 Madrid</p>
+                        <p>CIF A-12349875</p>
+                    </div>
+                </div>
+                <div class="tipo-documento">
+                    Factura
+                </div>
+                <div class="cliente">
+                    <p>Cliente: {{factura.cliente.nombre}}</p>
+                    <p>Domicilio: {{factura.cliente.direccion.calle}}</p>
+                    <p>C.P.: {{factura.cliente.direccion.cp}} Localidad: {{factura.cliente.direccion.localidad}}</p>
+                    <p>CIF: {{factura.cliente.cif}}</p>
+                    <p>Correo electrónico: {{factura.cliente.email}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
