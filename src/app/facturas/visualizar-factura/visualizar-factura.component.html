@@ -23,11 +23,24 @@
                     Factura
                 </div>
                 <div class="cliente">
-                    <p>Cliente: {{factura.cliente.nombre}}</p>
-                    <p>Domicilio: {{factura.cliente.direccion.calle}}</p>
-                    <p>C.P.: {{factura.cliente.direccion.cp}} Localidad: {{factura.cliente.direccion.localidad}}</p>
-                    <p>CIF: {{factura.cliente.cif}}</p>
-                    <p>Correo electrónico: {{factura.cliente.email}}</p>
+                    <p>Cliente: {{factura?.cliente.nombre}}</p>
+                    <p>Domicilio: {{factura?.cliente.direccion.calle}}</p>
+                    <p>C.P.: {{factura?.cliente.direccion.cp}} Localidad: {{factura?.cliente.direccion.localidad}}</p>
+                    <p>CIF: {{factura?.cliente.cif}}</p>
+                    <p>Correo electrónico: {{factura?.cliente.email}}</p>
+                </div>
+                <div class="datos">
+                    <div class="numero">
+                        Nº Fra.: {{factura?.numero}}
+                    </div>
+                    <div class="fecha">
+                        Fecha Fra.: {{factura?.fecha | date: 'dd/MM/yyyy'}}
+                    </div>
+                </div>
+                <div class="cuerpo">
+                    <pre>
+                        {{factura?.concepto}}
+                    </pre>
                 </div>
             </div>
         </div>

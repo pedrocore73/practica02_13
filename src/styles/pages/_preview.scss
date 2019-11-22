@@ -48,4 +48,38 @@
             margin-bottom: 4pt;
         }
     }
+
+    .datos {
+        width: 100%;
+        border-top: 1pt solid $color-font;
+        border-right: 1pt solid $color-font;
+        border-left: 1pt solid $color-font;
+        @include flex-row(flex-start, flex-start);
+
+        .numero {
+            padding: 8pt;
+            width: 25%;
+            border-right: 1pt solid $color-font;
+        }
+
+        .fecha {
+            padding: 8pt;
+            width: 75%;
+        }
+    }
+
+    .cuerpo {
+        width: 100%;
+        border-top: 1pt solid $color-font;
+        border-right: 1pt solid $color-font;
+        border-left: 1pt solid $color-font;
+        padding: 8pt;
+        min-height: 12cm;
+
+        pre {
+            font-family: $main-font;
+            line-height: 20pt;
+            text-align: left;
+        }
+    }
 }
