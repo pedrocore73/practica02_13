@@ -59,4 +59,28 @@ form {
         color: $color-font;
         font-family: $main-font;
     }
+
+    &.buscador {
+        width: auto;
+        @include flex-row(flex-start, center);
+
+        input {
+            border-radius: 0;
+            border: none;
+            border-bottom: 1.5px solid $main-color;
+            width: 0;
+            transition: all 300ms ease-in-out;
+            padding: 0.5em 0;
+        }
+
+        input.open {
+            width: 300px;
+            border-bottom: 1.5px solid $main-color;
+            padding: 0.5em 1em;
+        }
+
+        label {
+            cursor: pointer;
+        }
+    }
 }

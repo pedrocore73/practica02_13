@@ -3,7 +3,15 @@
     <div class="card">
        <div class="fila">
            <div class="col-100 titulo">
-               <h1></h1>
+               <form class="buscador" [formGroup]="formSearch">
+                    <label (click)="showSearch()">
+                        <img src="assets/search.svg">
+                    </label>
+                    <input type="search" 
+                           placeholder="Nombre cliente..." 
+                           #search
+                           formControlName="search">
+               </form>
                <button routerLink="/crear-cliente">Añadir cliente</button>
            </div>
        </div>
@@ -17,12 +25,12 @@
                <th></th>
            </tr>
            <tr *ngFor="let cliente of clientes">
-                <td>{{cliente.nombre}}</td>
-                <td>{{cliente.cif}}</td>
-                <td>{{cliente.direccion.localidad}}</td>
-                <td>{{cliente.email}}</td>
+                <td>{{cliente?.nombre}}</td>
+                <td>{{cliente?.cif}}</td>
+                <td>{{cliente?.direccion.localidad}}</td>
+                <td>{{cliente?.email}}</td>
                 <td>
-                    <button class="warning">
+                    <button class="warning" routerLink="/editar-cliente/{{cliente._id}}">
                         <img src="assets/edit.svg">
                     </button>
                     <button class="danger m-l-small" (click)="showModal(cliente._id)">
@@ -31,6 +39,8 @@
                 </td>
            </tr>
        </table>
+       <app-spinner *ngIf="showSpinner"></app-spinner>
+       <p class="sin-resultados" *ngIf="clientes?.length === 0">No se encontraron resultados</p>
     </div>
 </div>
 <app-modal *ngIf="modal" 

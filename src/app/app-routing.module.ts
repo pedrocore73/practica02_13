@@ -6,6 +6,7 @@ import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.co
 import { ListadoFacturasComponent } from './facturas/listado-facturas/listado-facturas.component';
 import { CrearFacturaComponent } from './facturas/crear-factura/crear-factura.component';
 import { VisualizarFacturaComponent } from './facturas/visualizar-factura/visualizar-factura.component';
+import { EditarClienteComponent } from './clientes/editar-cliente/editar-cliente.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,16 @@ const routes: Routes = [
                   {ruta:'/',texto:'Inicio'},
                   {ruta:'/listado-clientes',texto:'Listado de Clientes'},
                   {ruta:'/crear-cliente',texto:'Crear Cliente'}
+                ]
+          }
+  },
+  {
+   path:'editar-cliente/:id', 
+   component: EditarClienteComponent,
+   data: {rutas: [
+                  {ruta:'/',texto:'Inicio'},
+                  {ruta:'/listado-clientes',texto:'Listado de Clientes'},
+                  {ruta:'/editar-cliente/:id',texto:'Editar Cliente'}
                 ]
           }
   },

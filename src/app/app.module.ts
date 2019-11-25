@@ -14,6 +14,8 @@ import { ModalComponent } from './comunes/modal/modal.component';
 import { ListadoFacturasComponent } from './facturas/listado-facturas/listado-facturas.component';
 import { CrearFacturaComponent } from './facturas/crear-factura/crear-factura.component';
 import { VisualizarFacturaComponent } from './facturas/visualizar-factura/visualizar-factura.component';
+import { SpinnerComponent } from './comunes/spinner/spinner.component';
+import { EditarClienteComponent } from './clientes/editar-cliente/editar-cliente.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { VisualizarFacturaComponent } from './facturas/visualizar-factura/visual
     ModalComponent,
     ListadoFacturasComponent,
     CrearFacturaComponent,
-    VisualizarFacturaComponent
+    VisualizarFacturaComponent,
+    SpinnerComponent,
+    EditarClienteComponent
   ],
   imports: [
     BrowserModule,

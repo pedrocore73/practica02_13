@@ -10,6 +10,7 @@ import { NumerosService } from 'src/app/servicios/numeros.service';
 export class ListadoFacturasComponent implements OnInit {
 
   facturas: any;
+  showSpinner = true;
 
   constructor(private facturasService: FacturasService,
               private numerosService: NumerosService) { }
@@ -21,12 +22,14 @@ export class ListadoFacturasComponent implements OnInit {
   loadFacturas() {
     this.facturasService.getFacturas()
               .subscribe((res:any)=>{
+                  this.showSpinner = false;
                   this.facturas = res.facturas;
                   this.facturas.forEach(factura => {
                     factura.base = this.numerosService.getRedond(factura.base, 2);
                     factura.base = this.numerosService.getFormat(factura.base, 2);
                   })
                 },(err:any)=>{
+                  this.showSpinner = false;
                   console.log(err);
                 })
   }
