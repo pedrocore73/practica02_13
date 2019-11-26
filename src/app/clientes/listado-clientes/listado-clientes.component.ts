@@ -59,7 +59,7 @@ export class ListadoClientesComponent implements OnInit {
                                       })
                         } else {
                           this.showSpinner = false;
-                          this.clientes = [];
+                          this.loadClientes()
                         }
                       })
   }

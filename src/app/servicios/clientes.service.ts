@@ -31,8 +31,26 @@ export class ClientesService {
                   )
   }
 
+  getClienteId(id) {
+    return this.http.get(this.urlCliente + '/' + id)
+                  .pipe(
+                    map((res:any)=>{
+                      return res;
+                    })
+                  )
+  }
+
   postCliente(cliente: Cliente) {
     return this.http.post(this.urlCliente, cliente)
+                  .pipe(
+                    map((res:any)=>{
+                      return res;
+                    })
+                  )
+  }
+
+  putCliente(id, cliente){
+    return this.http.put(this.urlCliente + '/' + id, cliente)
                   .pipe(
                     map((res:any)=>{
                       return res;
