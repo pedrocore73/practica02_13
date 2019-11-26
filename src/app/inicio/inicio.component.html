@@ -1,6 +1,23 @@
 <div class="container">
     <app-breadcrumb></app-breadcrumb>
-    <div class="card">
-
+    <div class="fila">
+        <div class="col-33">
+            <div class="card datos-facturacion">
+                <h1>Facturación</h1>
+                <hr>
+                <p>
+                    <span>{{getMes(primerDiaMesCurso)}}</span> 
+                    <span>{{formatImporte(frasMesCurso)}}</span>
+                </p>
+                <p>
+                    <span>{{getMes(primerDiaUltimoMes)}}</span>
+                    <span>{{formatImporte(frasUltimoMes)}}</span>
+                </p>
+                <p>
+                    <span>{{getMes(primerDiaPenultimoMes)}}</span> 
+                    <span>{{formatImporte(frasPenultimoMes)}}</span>
+                </p>
+            </div>
+        </div>
     </div>
 </div>
