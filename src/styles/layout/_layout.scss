@@ -29,6 +29,10 @@
     &.end {
         @include flex-row(flex-end, center);
     }
+
+    &.inicio {
+        @include flex-row(flex-start, flex-start);
+    }
 }
 
 .col-100 {

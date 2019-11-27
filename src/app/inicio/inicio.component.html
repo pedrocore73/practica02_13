@@ -1,6 +1,6 @@
 <div class="container">
     <app-breadcrumb></app-breadcrumb>
-    <div class="fila">
+    <div class="fila inicio">
         <div class="col-33">
             <div class="card datos-facturacion">
                 <h1>Facturación</h1>
@@ -17,6 +17,15 @@
                     <span>{{getMes(primerDiaPenultimoMes)}}</span> 
                     <span>{{formatImporte(frasPenultimoMes)}}</span>
                 </p>
+            </div>
+        </div>
+        <div class="col-66">
+            <div class="card datos-facturacion">
+                <h1>Evolución facturación</h1>
+                <hr>
+                <div class="grafico" *ngIf="chart">
+                    <canvas id="grafico">{{chart}}</canvas>
+                </div>
             </div>
         </div>
     </div>

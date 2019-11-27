@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FacturasService } from '../servicios/facturas.service';
 import { NumerosService } from '../servicios/numeros.service';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-inicio',
@@ -8,6 +9,10 @@ import { NumerosService } from '../servicios/numeros.service';
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent implements OnInit {
+
+  chartOptions = {
+    responsive: true
+  }
 
   facturas: any;
   primerDiaMesCurso: any;
@@ -19,6 +24,8 @@ export class InicioComponent implements OnInit {
   frasMesCurso: number;
   frasUltimoMes: number;
   frasPenultimoMes: number;
+
+  chart:any = [];
 
   constructor(private facturasService: FacturasService,
               private numerosService: NumerosService) { }
@@ -35,6 +42,7 @@ export class InicioComponent implements OnInit {
                     this.frasMesCurso = this.filterFras(this.primerDiaMesCurso, this.ultimoDiaMesCurso);
                     this.frasUltimoMes = this.filterFras(this.primerDiaUltimoMes, this.ultimoDiaUltimoMes);
                     this.frasPenultimoMes = this.filterFras(this.primerDiaPenultimoMes, this.ultimoDiaPenultimoMes);
+                    this.loadChart();
                   },(err:any)=>{
                     console.log(err);
                   })
@@ -132,6 +140,36 @@ export class InicioComponent implements OnInit {
     let importeFormat = this.numerosService.getRedond(importeMes, 2);
     importeFormat = this.numerosService.getFormat(importeFormat, 2);
     return importeFormat;
+  }
+
+  loadChart() {
+    let meses = [
+      this.getMes(this.primerDiaPenultimoMes),
+      this.getMes(this.primerDiaUltimoMes),
+      this.getMes(this.primerDiaMesCurso)
+    ];
+    let sumaFras = [
+      this.frasPenultimoMes,
+      this.frasUltimoMes,
+      this.frasMesCurso
+    ];
+    this.chart = new Chart('grafico',{
+      type: 'line',
+      data: {
+        labels: meses,
+        datasets: [
+          {
+            data: sumaFras,
+            borderColor: '#008489'
+          }
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        }
+      }
+    })
   }
 
 }
