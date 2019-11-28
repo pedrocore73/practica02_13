@@ -81,3 +81,6 @@
         </form>
     </div>
 </div>
+<app-modal *ngIf="modal" 
+           [texto]="'El cliente no existe, ¿desea crearlo?'"
+           (action)="getAction($event)"></app-modal>

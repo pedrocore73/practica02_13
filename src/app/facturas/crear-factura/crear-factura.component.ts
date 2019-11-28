@@ -17,6 +17,7 @@ export class CrearFacturaComponent implements OnInit {
   clientes: any;
   cliente: any;
   fechaActual = new Date();
+  modal = false;
 
   constructor(private facturasService: FacturasService,
               private router: Router,
@@ -86,13 +87,35 @@ export class CrearFacturaComponent implements OnInit {
       tipo: this.formFra.get('tipo').value,
       formaPago: this.formFra.get('formaPago').value
     }
-    this.facturasService.postFactura(factura)
-                  .subscribe((res:any)=>{
-                      this.mensajesService.setMensaje(res.mensaje, 'exitoTotal');
-                      this.router.navigate(['/listado-facturas']);
-                    },(err:any)=>{
-                      this.mensajesService.setMensaje('Error de conexión con los servidores, inténtelo más tarde', 'warning');
-                    })
+    if(factura.cliente !== undefined) {
+      this.facturasService.postFactura(factura)
+                    .subscribe((res:any)=>{
+                        this.mensajesService.setMensaje(res.mensaje, 'exitoTotal');
+                        this.router.navigate(['/listado-facturas']);
+                      },(err:any)=>{
+                        this.mensajesService.setMensaje('Error de conexión con los servidores, inténtelo más tarde', 'warning');
+                      })
+    } else {
+      this.showModal();
+    }
   }
+
+  showModal() {
+    this.modal = true;
+  }
+
+  hideModal() {
+    this.modal = false;
+  }
+
+  getAction(event) {
+    if(event.action) {
+      this.hideModal();
+      this.router.navigate(['/crear-cliente']);
+    } else {
+      this.hideModal();
+    }
+  }
+
 
 }
