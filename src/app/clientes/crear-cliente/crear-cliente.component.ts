@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Cliente } from 'src/app/models/cliente.model';
 import { ClientesService } from 'src/app/servicios/clientes.service';
 import { Router } from '@angular/router';
@@ -20,7 +20,7 @@ export class CrearClienteComponent implements OnInit {
 
   ngOnInit() {
     this.formCliente = new FormGroup({
-      nombre: new FormControl(''),
+      nombre: new FormControl('',[Validators.required]),
       cif: new FormControl(''),
       calle: new FormControl(''),
       cp: new FormControl(''),

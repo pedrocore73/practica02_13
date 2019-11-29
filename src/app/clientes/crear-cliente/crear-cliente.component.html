@@ -10,7 +10,16 @@
         <form [formGroup]="formCliente" (ngSubmit)="sendCliente()">
             <div class="fila">
                 <div class="col-100 pila">
-                    <label for="nombre">NOMBRE</label>
+                    <label for="nombre">
+                        NOMBRE
+                        <span class="validate valid">
+                            <img src="assets/check-circle.svg">
+                        </span>
+                        <!-- <span class="validate invalid">
+                            <img src="assets/alert-triangle.svg">
+                            El nombre es obligatorio
+                        </span> -->
+                    </label>
                     <input type="text" id="nombre" formControlName="nombre">
                 </div>
             </div>
@@ -22,7 +31,13 @@
             </div>
             <div class="fila">
                 <div class="col-100 pila">
-                    <label for="calle">Calle y nº</label>
+                    <label for="calle">
+                        Calle y nº
+                        <span class="validate invalid">
+                            <img src="assets/alert-triangle.svg">
+                            El nombre es obligatorio
+                        </span>
+                    </label>
                     <input type="text" id="calle" formControlName="calle">
                 </div>
             </div>
