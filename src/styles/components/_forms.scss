@@ -44,6 +44,14 @@ form {
             background-color: $color-font-ultra-light;
             cursor: not-allowed;
         }
+
+        &.ng-invalid {
+            border: 1px solid $danger;
+        }
+
+        &.inicio.ng-invalid {
+            border: 1px solid $color-font;
+        }
     }
 
     .resultados {

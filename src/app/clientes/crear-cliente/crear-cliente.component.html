@@ -12,31 +12,41 @@
                 <div class="col-100 pila">
                     <label for="nombre">
                         NOMBRE
-                        <span class="validate valid">
+                        <span class="validate valid"
+                             *ngIf="formCliente.controls.nombre.valid">
                             <img src="assets/check-circle.svg">
                         </span>
-                        <!-- <span class="validate invalid">
+                        <span class="validate invalid"
+                            *ngIf="validacion && formCliente.controls.nombre.invalid">
                             <img src="assets/alert-triangle.svg">
                             El nombre es obligatorio
-                        </span> -->
+                        </span>
                     </label>
-                    <input type="text" id="nombre" formControlName="nombre">
+                    <input class="inicio" type="text" id="nombre" formControlName="nombre" required #nombre>
                 </div>
             </div>
             <div class="fila">
                 <div class="col-100 pila">
-                    <label for="cif">CIF</label>
-                    <input type="text" id="cif" formControlName="cif">
+                    <label for="cif">
+                        CIF
+                        <span class="validate valid"
+                              *ngIf="formCliente.controls.cif.valid">
+                            <img src="assets/check-circle.svg">
+                        </span>
+                        <span class="validate invalid"
+                            *ngIf="validacion && formCliente.get('cif').errors &&
+                                   formCliente.get('cif').errors.validCif">
+                            <img src="assets/alert-triangle.svg">
+                            {{formCliente.get('cif').errors.mensaje}}
+                        </span>
+                    </label>
+                    <input class="inicio" type="text" id="cif" formControlName="cif" maxlength="9" #cif>
                 </div>
             </div>
             <div class="fila">
                 <div class="col-100 pila">
                     <label for="calle">
                         Calle y nº
-                        <span class="validate invalid">
-                            <img src="assets/alert-triangle.svg">
-                            El nombre es obligatorio
-                        </span>
                     </label>
                     <input type="text" id="calle" formControlName="calle">
                 </div>
@@ -63,8 +73,9 @@
             </div>
             <div class="fila">
                 <div class="col-100 botones">
-                    <button class="outline" routerLink="/listado-clientes">Cancelar</button>
-                    <button class="m-l-small" type="submit">Añadir</button>
+                    <button class="outline" routerLink="/listado-clientes" type="button">Cancelar</button>
+                    <button class="m-l-small" *ngIf="formCliente.invalid" type="button" (click)="showValidacion()">Añadir</button>
+                    <button class="m-l-small" *ngIf="formCliente.valid" type="submit">Añadir</button>
                 </div>
             </div>
         </form>
