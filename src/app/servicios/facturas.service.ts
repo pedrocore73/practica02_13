@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 export class FacturasService {  
 
   urlFactura = environment.urlFactura;
+  urlEmail = environment.urlEmail;
 
   constructor(private http: HttpClient) { }
 
@@ -32,6 +33,15 @@ export class FacturasService {
 
   postFactura(factura) {
     return this.http.post(this.urlFactura, factura)
+                  .pipe(
+                    map((res:any)=>{
+                      return res;
+                    })
+                  )
+  }
+
+  sendEmailFactura(id) {
+    return this.http.get(this.urlEmail + '/factura/' + id)
                   .pipe(
                     map((res:any)=>{
                       return res;

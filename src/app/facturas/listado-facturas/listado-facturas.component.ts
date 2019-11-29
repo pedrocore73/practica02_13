@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FacturasService } from 'src/app/servicios/facturas.service';
 import { NumerosService } from 'src/app/servicios/numeros.service';
+import { MensajesService } from 'src/app/servicios/mensajes.service';
 
 @Component({
   selector: 'app-listado-facturas',
@@ -13,7 +14,8 @@ export class ListadoFacturasComponent implements OnInit {
   showSpinner = true;
 
   constructor(private facturasService: FacturasService,
-              private numerosService: NumerosService) { }
+              private numerosService: NumerosService,
+              private mensajesService: MensajesService) { }
 
   ngOnInit() {
     this.loadFacturas();
@@ -31,6 +33,15 @@ export class ListadoFacturasComponent implements OnInit {
                 },(err:any)=>{
                   this.showSpinner = false;
                   console.log(err);
+                })
+  }
+
+  sendFactura(id) {
+    this.facturasService.sendEmailFactura(id)
+              .subscribe((res:any)=>{
+                  this.mensajesService.setMensaje(res.mensaje, 'exitoTotal');
+                },(err:any)=>{
+                  this.mensajesService.setMensaje('Error de conexión con los servidores, inténtelo más tarde', 'warning');
                 })
   }
 

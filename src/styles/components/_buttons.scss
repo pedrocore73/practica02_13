@@ -40,4 +40,13 @@ button {
     &.danger:hover {
         background-color: $danger-darker;
     }
+
+    &.info {
+        background-color: $info;
+        border-bottom: 3px solid $info-darker;
+    }
+
+    &.info:hover {
+        background-color: $info-darker;
+    }
 }
